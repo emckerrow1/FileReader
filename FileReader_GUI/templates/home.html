@@ -1,0 +1,16 @@
+<h1>Home</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="Upload File"/>
+</form>
+
+<table>
+	{% for title, information  in file_information.items %}
+	<tr>
+		<td>{{title}}</td>
+		<td>{{information}}</td>
+	</tr>
+	{% endfor %}
+</table>
